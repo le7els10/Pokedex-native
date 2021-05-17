@@ -1,14 +1,14 @@
-import React from 'react'
-import { Text, View } from 'react-native'
-
+import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
+import {Text, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import Navigator from './src/navigation/Navigator';
 const App = () => {
   return (
-    <View>
-      <Text>
-        El pepe
-      </Text>
-    </View>
-  )
-}
+    <NavigationContainer>
+      <Navigator />
+    </NavigationContainer>
+  );
+};
 
-export default App
+export default App;
