@@ -17,29 +17,35 @@ const HomeScreen = () => {
           style={sty.pokebolaBG}
         />
         {/* <Text style={{...sty.title, top: windowTop + 20}}>Pokedex</Text> */}
-        <FlatList
-          data={PokemonList}
-          keyExtractor={pokemon => pokemon.id}
-          numColumns={2}
-          ListHeaderComponent={
-            <Text
-              style={{
-                ...sty.title,
-                ...sty.globalMargin,
-                top: windowTop + 20,
-                marginBottom: windowTop + 20,
-              }}>
-              Pokedex
-            </Text>
-          }
-          renderItem={({item}) => <PokemonCard pokemon={item} />}
-          //infinite scroll
-          onEndReached={loadPokemons}
-          onEndReachedThreshold={0.4}
-          ListFooterComponent={
-            <ActivityIndicator size={20} color="#bbb" style={{height: 100}} />
-          }
-        />
+
+        <View
+          style={{
+            alignItems: 'center',
+          }}>
+          <FlatList
+            data={PokemonList}
+            keyExtractor={pokemon => pokemon.id}
+            numColumns={2}
+            ListHeaderComponent={
+              <Text
+                style={{
+                  ...sty.title,
+                  ...sty.globalMargin,
+                  top: windowTop + 20,
+                  marginBottom: windowTop + 20,
+                }}>
+                Pokedex
+              </Text>
+            }
+            renderItem={({item}) => <PokemonCard pokemon={item} />}
+            //infinite scroll
+            onEndReached={loadPokemons}
+            onEndReachedThreshold={0.4}
+            ListFooterComponent={
+              <ActivityIndicator size={20} color="#bbb" style={{height: 100}} />
+            }
+          />
+        </View>
       </View>
     </>
   );
